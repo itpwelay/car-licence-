@@ -1,162 +1,190 @@
-# car-licence-.gtthub.io
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ကားလိုင်စင်စစ်ဆေးရန်</title>
+    <title>I Love You So Much Animation</title>
     <style>
         body {
-            font-family: 'Pyidaungsu', sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
         }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
+
+        .love-container {
             text-align: center;
+            position: relative;
         }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
+
+        .love-text {
+            font-size: 5vw; /* Responsive font size */
             font-weight: bold;
+            color: #fff; /* White text for contrast */
+            position: relative;
+            animation: textPopIn 1.5s ease-out forwards, textGlow 2.5s ease-in-out infinite alternate 1.5s;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                         0 0 20px rgba(255, 255, 255, 0.5),
+                         0 0 30px #e60073, /* Deep pink glow */
+                         0 0 40px #e60073,
+                         0 0 50px #e60073;
+            padding: 20px;
+            z-index: 10;
         }
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+
+        @keyframes textPopIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                             0 0 20px rgba(255, 255, 255, 0.5),
+                             0 0 30px #e60073,
+                             0 0 40px #e60073,
+                             0 0 50px #e60073;
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                             0 0 30px rgba(255, 255, 255, 0.6),
+                             0 0 40px #ff4da6, /* Brighter pink glow */
+                             0 0 50px #ff4da6,
+                             0 0 60px #ff4da6,
+                             0 0 70px #ff4da6;
+            }
         }
-        button:hover {
-            background-color: #2980b9;
+
+        .heart-bubble {
+            position: absolute;
+            background-color: rgba(255, 105, 180, 0.7); /* Pink heart color */
+            width: 20px;
+            height: 20px;
+            border-radius: 50% 50% 0 0; /* Top part of the heart */
+            transform: rotate(-45deg);
+            animation: floatUp 5s infinite ease-in-out;
+            z-index: 1;
         }
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            display: none;
+
+        .heart-bubble::before,
+        .heart-bubble::after {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
         }
-        .valid {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+
+        .heart-bubble::before {
+            top: -10px;
+            left: 0;
         }
-        .invalid {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+
+        .heart-bubble::after {
+            top: 0;
+            left: 10px;
         }
-        .examples {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #666;
+
+        /* Different sizes and animation delays/durations for variety */
+        .heart-bubble.small {
+            width: 10px;
+            height: 10px;
+        }
+        .heart-bubble.small::before { top: -5px; }
+        .heart-bubble.small::after { left: 5px; }
+
+        .heart-bubble.medium {
+            width: 15px;
+            height: 15px;
+        }
+        .heart-bubble.medium::before { top: -7.5px; }
+        .heart-bubble.medium::after { left: 7.5px; }
+
+
+        @keyframes floatUp {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: rotate(-45deg) translateX(0);
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                bottom: 100vh; /* Float all the way to the top */
+                opacity: 0;
+                transform: rotate(-45deg) translateX(calc(var(--sway) * 50px)); /* Add horizontal sway */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>ကားလိုင်စင်စစ်ဆေးရန်</h1>
-        
-        <div class="input-group">
-            <label for="license">ကားလိုင်စင်နံပါတ် (မြန်မာလို သို့မဟုတ် အင်္ဂလိပ်လို ရိုက်ထည့်ပါ)</label>
-            <input type="text" id="license" placeholder="ဥပမာ - ၁ကဒ ၁၂၃၄ သို့မဟုတ် 1KaDa 1234">
-        </div>
-        
-        <button onclick="checkLicense()">စစ်ဆေးမည်</button>
-        
-        <div id="result" class="result"></div>
-        
-        <div class="examples">
-            <p><strong>မှန်ကန်သော လိုင်စင်နံပါတ် ပုံစံများ:</strong></p>
-            <ul>
-                <li>၁ကဒ ၁၂၃၄</li>
-                <li>၂ကန ၄၅၆၇</li>
-                <li>3YaNa 7890</li>
-                <li>4KaTha 1122</li>
-                <li>၅ပခ ၃၃၄၄</li>
-            </ul>
-            <p>မြန်မာဂဏန်း (၁၂၃၄) သို့မဟုတ် အင်္ဂလိပ်ဂဏန်း (1234) နှစ်မျိုးလုံးကို လက်ခံပါသည်။</p>
-        </div>
+    <div class="love-container">
+        <div class="love-text">I Love You So Much</div>
     </div>
 
     <script>
-        function checkLicense() {
-            const licenseInput = document.getElementById('license').value.trim();
-            const resultDiv = document.getElementById('result');
-            
-            // Convert Myanmar numbers to English numbers
-            const myanmarNumbers = ['၀', '၁', '၂', '၃', '၄', '၅', '၆', '၇', '၈', '၉'];
-            const englishNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-            
-            let convertedInput = licenseInput;
-            for (let i = 0; i < myanmarNumbers.length; i++) {
-                const regex = new RegExp(myanmarNumbers[i], 'g');
-                convertedInput = convertedInput.replace(regex, englishNumbers[i]);
+        const loveContainer = document.querySelector('.love-container');
+        const numBubbles = 30; // Number of heart bubbles
+
+        // Popular and beautiful colors for hearts
+        const heartColors = [
+            'rgba(255, 105, 180, 0.7)', // Hot Pink
+            'rgba(255, 20, 147, 0.7)',   // Deep Pink
+            'rgba(255, 182, 193, 0.7)', // Light Pink
+            'rgba(220, 20, 60, 0.7)',    // Crimson Red
+            'rgba(255, 0, 0, 0.6)'       // Pure Red
+        ];
+
+        function createHeartBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('heart-bubble');
+
+            // Randomly assign size
+            const sizeChance = Math.random();
+            if (sizeChance < 0.33) {
+                bubble.classList.add('small');
+            } else if (sizeChance < 0.66) {
+                bubble.classList.add('medium');
             }
-            
-            // Regular expression for Myanmar license plates
-            const licenseRegex = /^([1-9])([a-zA-Z]{2,4})\s*([0-9]{1,4})$/i;
-            const match = convertedInput.match(licenseRegex);
-            
-            if (match) {
-                const regionNumber = match[1];
-                const regionCode = match[2].toUpperCase();
-                const plateNumber = match[3];
-                
-                resultDiv.className = 'result valid';
-                resultDiv.innerHTML = `
-                    <strong>လိုင်စင်နံပါတ် မှန်ကန်ပါသည်။</strong><br><br>
-                    <strong>တိုင်းဒေသကြီး/ပြည်နယ်:</strong> ${getRegionName(regionNumber, regionCode)}<br>
-                    <strong>လိုင်စင်နံပါတ်:</strong> ${regionNumber}${regionCode} ${plateNumber}
-                `;
-                resultDiv.style.display = 'block';
-            } else {
-                resultDiv.className = 'result invalid';
-                resultDiv.innerHTML = '<strong>လိုင်စင်နံပါတ် မမှန်ကန်ပါ။</strong><br>ကျေးဇူးပြု၍ မှန်ကန်သော ပုံစံဖြင့် ပြန်လည်ရိုက်ထည့်ပါ။';
-                resultDiv.style.display = 'block';
-            }
+            // Default is large (20px)
+
+            bubble.style.left = `${Math.random() * 100}vw`; // Start at random horizontal position
+            bubble.style.animationDuration = `${Math.random() * 3 + 4}s`; // Random duration between 4s and 7s
+            bubble.style.animationDelay = `${Math.random() * 3}s`; // Random delay up to 3s
+            bubble.style.setProperty('--sway', Math.random() * 2 - 1); // For horizontal movement variation
+
+            // Assign a random beautiful color
+            bubble.style.backgroundColor = heartColors[Math.floor(Math.random() * heartColors.length)];
+
+            document.body.appendChild(bubble); // Append to body to float across the whole screen
+
+            // Remove bubble from DOM after animation finishes to save resources
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
         }
-        
-        function getRegionName(number, code) {
-            const regions = {
-                '1': { 'KADA': 'ရန်ကုန်တိုင်း', 'KANA': 'ရန်ကုန်တိုင်း', 'KATA': 'ရန်ကုန်တိုင်း', 'KAYA': 'ရန်ကုန်တိုင်း' },
-                '2': { 'KANA': 'မန္တလေးတိုင်း', 'KADA': 'မန္တလေးတိုင်း' },
-                '3': { 'YANA': 'မွန်ပြည်နယ်', 'YADA': 'မွန်ပြည်နယ်' },
-                '4': { 'KATHA': 'စစ်ကိုင်းတိုင်း', 'KADA': 'စစ်ကိုင်းတိုင်း' },
-                '5': { 'PAKA': 'ပဲခူးတိုင်း', 'PADA': 'ပဲခူးတိုင်း' },
-                '6': { 'SAGA': 'စစ်ကိုင်းတိုင်း', 'SADA': 'စစ်ကိုင်းတိုင်း' },
-                '7': { 'TAYA': 'တနင်္သာရီတိုင်း', 'TADA': 'တနင်္သာရီတိုင်း' },
-                '8': { 'MAYA': 'မကွေးတိုင်း', 'MADA': 'မကွေးတိုင်း' },
-                '9': { 'AYA': 'ဧရာဝတီတိုင်း', 'ADA': 'ဧရာဝတီတိုင်း' }
-            };
-            
-            if (regions[number] && regions[number][code]) {
-                return regions[number][code];
-            } else {
-                return 'မသိသေးသော တိုင်းဒေသကြီး/ပြည်နယ်';
-            }
+
+        for (let i = 0; i < numBubbles; i++) {
+            createHeartBubble();
         }
+
+        // Create new bubbles periodically for a continuous effect
+        setInterval(createHeartBubble, 700); // Add a new heart every 700ms
     </script>
 </body>
 </html>
